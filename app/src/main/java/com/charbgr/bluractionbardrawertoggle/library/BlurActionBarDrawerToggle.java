@@ -212,8 +212,6 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
     }
 
     private void handleRecycle() {
-
-
         Drawable drawable = mBlurredImageView.getDrawable();
 
         if (drawable instanceof BitmapDrawable) {
