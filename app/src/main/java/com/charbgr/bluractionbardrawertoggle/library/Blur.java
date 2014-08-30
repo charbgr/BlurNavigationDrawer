@@ -13,7 +13,7 @@ public class Blur {
 
 
     @SuppressLint("NewApi")
-    public static Bitmap fastblur(Context context, Bitmap sentBitmap, int radius) {
+    public static Bitmap fastblur(Context context, Bitmap sentBitmap, int radius, boolean canReuseInBitmap) {
 
         if (VERSION.SDK_INT > 16) {
             Bitmap bitmap = sentBitmap.copy(sentBitmap.getConfig(), true);
@@ -37,7 +37,13 @@ public class Blur {
 
         // Stack Blur Algorithm by Mario Klingemann <mario@quasimondo.com>
 
-        Bitmap bitmap = sentBitmap.copy(sentBitmap.getConfig(), true);
+        Bitmap bitmap;
+
+        if (canReuseInBitmap) {
+            bitmap = sentBitmap;
+        } else {
+            bitmap = sentBitmap.copy(sentBitmap.getConfig(), true);
+        }
 
         if (radius < 1) {
             return (null);
