@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.charbgr.bluractionbardrawertoggle.library;
+package com.charbgr.BlurActionBarDrawerToggle.library;
 
 import android.app.Activity;
 import android.content.Context;
