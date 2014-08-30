@@ -1,5 +1,6 @@
 BlurActionBarDrawerToggle Library
 =========================
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BlurActionBarDrawerToggle-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/874)
 
 Blur Navigation Drawer Toggle like Etsy app.
 
