@@ -3,6 +3,8 @@ BlurActionBarDrawerToggle Library
 
 Blur Navigation Drawer Toggle like Etsy app.
 
+![alt tag](https://raw.githubusercontent.com/charbgr/BlurActionBarDrawerToggle/master/Screenshot/showcase1.gif)
+
 How to Use
 ==========
 
