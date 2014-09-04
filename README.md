@@ -14,7 +14,20 @@ Blur Navigation Drawer Toggle like Etsy app.
 How to Use
 ==========
 
-Just replace your default toggle with this awesome blurred toggle effect just by adding 4 letters !
+Declare your layout
+```xml
+<com.charbgr.BlurActionBarDrawerToggle.library.BlurDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:blurRadius="19"
+    app:downScaleFactor="8.0"
+    app:drawerUpImageId="@drawable/ic_drawer"
+    app:openDescription="@string/navigation_drawer_open"
+    app:closeDescription="@string/navigation_drawer_close"
+    ... >
+```
+Or replace your default toggle with this awesome blurred toggle effect just by adding 4 letters !
 
 For example: 
 
@@ -37,29 +50,10 @@ mDrawerToggle = new BlurActionBarDrawerToggle(
   R.string.navigation_drawer_close  /* "close drawer" description for accessibility */
 );
 ```
-
-then modify your layout to include a RelativeLayout around the drawer main frame:
-```xml
-<!-- This is the RelativeLayout that you must have for blur effect!-->
-
-<RelativeLayout
-    android:id="@+id/mylayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- As the main content view, the view below consumes the entire
-         space available using match_parent in both dimensions. -->
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</RelativeLayout>
-```
-
-and initialize BlurActionBarDrawerToggle with the RelativeLayout (working to fix this) passed as View and a blur radius.
+and set your radius or your down scale factor
 ```java
-mDrawerToggle.init(getActivity().findViewById(R.id.mylayout), 10);
+mDrawerToggle.setRadius(15);
+mDrawerToggle.setDownScaleFactor(6.0f);
 ```
 
 and enjoy your blur effect!
