@@ -1,6 +1,6 @@
 Blur Navigation Drawer Library
 =========================
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BlurActionBarDrawerToggle-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/874)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BlurNavigationDrawer-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/874)
 
 Blur Navigation Drawer like Etsy app.
 
