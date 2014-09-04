@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.charbgr.BlurActionBarDrawerToggle.library;
+package com.charbgr.BlurNavigationDrawer.library;
 
 import android.app.Activity;
 import android.content.Context;
@@ -38,7 +38,7 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
     /**
      * the layout that we take snapshot
      */
-    private View mLayout;
+    private DrawerLayout mDrawerLayout;
 
     /**
      * an imageview to display the blurred snapshot/bitmap
@@ -48,16 +48,28 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
     /**
      * Blur radius used for the background.
      */
-    private int mBlurRadius = 5;
+    private int mBlurRadius = DEFAULT_BLUR_RADIUS;
+
+    /**
+     * Default Blur Radius
+     */
+
+    public static int DEFAULT_BLUR_RADIUS = 5;
 
     /**
      * Down scale factor to reduce blurring time and memory allocation.
      */
-    private float mDownScaleFactor = 5;
+    private float mDownScaleFactor = DEFAULT_DOWNSCALEFACTOR;
+
+    /**
+     * Default Down Scale Factor
+     */
+
+    public static float DEFAULT_DOWNSCALEFACTOR = 5.0f;
 
     /**
      * Render flag
-     *
+     * <p/>
      * If true we must render
      * if false, we have already blurred the background
      */
@@ -69,46 +81,19 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
     private boolean isOpening = false;
 
     public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
-                                     int drawerImageRes, int openDrawerContentDescRes, int closeDrawerContentDescRes) {
+                                     int drawerImageRes, int openDrawerContentDescRes,
+                                     int closeDrawerContentDescRes) {
         super(activity, drawerLayout, drawerImageRes, openDrawerContentDescRes, closeDrawerContentDescRes);
         this.context = activity.getBaseContext();
-
-    }
-
-    public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
-                                     int drawerImageRes, int openDrawerContentDescRes, int closeDrawerContentDescRes, View layout) {
-        super(activity, drawerLayout, drawerImageRes, openDrawerContentDescRes, closeDrawerContentDescRes);
-        this.context = activity.getBaseContext();
-        init(layout, mBlurRadius);
-    }
-
-    public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
-                                     int drawerImageRes, int openDrawerContentDescRes, int closeDrawerContentDescRes, View layout, int radius) {
-        super(activity, drawerLayout, drawerImageRes, openDrawerContentDescRes, closeDrawerContentDescRes);
-        this.context = activity.getBaseContext();
-        init(layout, radius);
-    }
-
-
-    public void init(final View layout) {
-        init(layout, mBlurRadius);
+        this.mDrawerLayout = drawerLayout;
+        init();
     }
 
     /**
-     * This function must be invoked if "default" (1st) constructor is called
-     * or if you want to change the blurred layout.
-     * <p/>
      * We make a fake ImageView with width and height MATCH_PARENT.
      * This ImageView will host the blurred snapshot/bitmap.
-     *
-     * @param layout A {@link android.widget.RelativeLayout} to take snapshot of it.
-     * @param radius Blur radius
      */
-    public void init(final View layout, int radius) {
-        this.mLayout = layout;
-        this.mBlurRadius = radius;
-
-
+    private void init() {
         mBlurredImageView = new ImageView(context);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -117,7 +102,14 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
         mBlurredImageView.setClickable(false);
         mBlurredImageView.setVisibility(View.GONE);
         mBlurredImageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        ((RelativeLayout) this.mLayout).addView(mBlurredImageView);
+        mDrawerLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                // Add the ImageViewiew not in the last position.
+                // Otherwise, it will be shown in NavigationDrawer
+                mDrawerLayout.addView(mBlurredImageView, 1);
+            }
+        });
     }
 
 
@@ -165,7 +157,7 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
         if (prepareToRender) {
             prepareToRender = false;
 
-            Bitmap bitmap = loadBitmapFromView(mLayout);
+            Bitmap bitmap = loadBitmapFromView(mDrawerLayout);
             bitmap = scaleBitmap(bitmap);
             bitmap = Blur.fastblur(context, bitmap, mBlurRadius, false);
 
@@ -179,7 +171,7 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
         mBlurRadius = radius < 1 ? 1 : radius;
     }
 
-    public void setDownScaleFactor(float downScaleFactor){
+    public void setDownScaleFactor(float downScaleFactor) {
         mDownScaleFactor = downScaleFactor < 1 ? 1 : downScaleFactor;
     }
 

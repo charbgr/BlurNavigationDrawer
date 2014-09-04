@@ -1,4 +1,4 @@
-package com.charbgr.BlurActionBarDrawerToggle.sample.app;
+package com.charbgr.BlurNavigationDrawer.sample.app;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.charbgr.BlurActionBarDrawerToggle.sample.app;
+package com.charbgr.BlurNavigationDrawer.sample.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -154,13 +154,13 @@ public class MainActivity extends ActionBarActivity
             movies.add(new Movie(res.getDrawable(R.drawable.poster_about_time), "About Time"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_enders_game), "Enders Game"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_enough_said), "Enough Said"));
+            movies.add(new Movie(res.getDrawable(R.drawable.poster_the_fifth_estate), "The fifth estate"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_gravity), "Gravity"));
+            movies.add(new Movie(res.getDrawable(R.drawable.poster_cloudy_with_a_chance_of_meatballs_2), "Cloudy with a chance of meatballs"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_prisoners), "Prisoners"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_runner_runner), "Runner Runner"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_the_counselor), "The counselor"));
-            movies.add(new Movie(res.getDrawable(R.drawable.poster_the_fifth_estate), "The fifth estate"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_thor), "About Time"));
-            movies.add(new Movie(res.getDrawable(R.drawable.poster_cloudy_with_a_chance_of_meatballs_2), "Cloudy with a chance of meatballs"));
 
 
 
