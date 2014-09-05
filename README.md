@@ -7,6 +7,9 @@ Blur Navigation Drawer like Etsy app.
 <img src="https://raw.githubusercontent.com/charbgr/BlurActionBarDrawerToggle/master/Screenshot/BlurActionDrawerToggleClosed.png"  height="480" width="300" />
 <img src="https://raw.githubusercontent.com/charbgr/BlurActionBarDrawerToggle/master/Screenshot/BlurActionDrawerToggleOpened.png"  height="480" width="300" />
 
+Demo
+====
+You can download a demo [here](https://play.google.com/store/apps/details?id=com.charbgr.BlurNavigationDrawer.sample.app).
 
 How to Use
 ==========
