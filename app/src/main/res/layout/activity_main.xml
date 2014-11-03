@@ -1,13 +1,13 @@
 <!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
-<com.charbgr.BlurNavigationDrawer.v4.BlurDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.charbgr.BlurNavigationDrawer.v7.BlurDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:blurRadius="19"
+    app:blurRadius="0"
     app:closeDescription="@string/navigation_drawer_close"
-    app:downScaleFactor="8.0"
+    app:downScaleFactor="0.0"
     app:drawerUpImageId="@drawable/ic_drawer"
     app:openDescription="@string/navigation_drawer_open"
     tools:context=".MainActivity">
@@ -35,4 +35,4 @@
         android:layout_gravity="start"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</com.charbgr.BlurNavigationDrawer.v4.BlurDrawerLayout>
+</com.charbgr.BlurNavigationDrawer.v7.BlurDrawerLayout>

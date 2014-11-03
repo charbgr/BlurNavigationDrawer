@@ -22,8 +22,6 @@ public class BlurDrawerLayout extends DrawerLayout {
     public BlurDrawerLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        System.out.println("hihii v2");
-
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.BlurDrawerLayout, 0, 0);
         try {
 

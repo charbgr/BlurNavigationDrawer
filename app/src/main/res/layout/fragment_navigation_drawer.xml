@@ -2,22 +2,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#cccc"
     android:orientation="vertical"
-    tools:context=".NavigationDrawerFragment"
-    android:background="#cccc">
+    tools:context=".NavigationDrawerFragment">
 
-    <ListView
-        android:id="@+id/mylistview"
+    <TextView
+        android:id="@+id/blurRadiusTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Blur Radius: 0" />
 
     <SeekBar
+        android:id="@+id/blurRadiusSeekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:progress="20"
-        android:secondaryProgress="20" />
+        android:progress="0"
+        android:max="25"/>
+
+    <TextView
+        android:id="@+id/downScaleSeekbarTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="DownScale Factor: 0" />
+
+    <SeekBar
+        android:id="@+id/downScaleSeekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:progress="0"
+        android:max="10"/>
+
 </LinearLayout>
