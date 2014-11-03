@@ -1,4 +1,4 @@
-package com.charbgr.BlurNavigationDrawer.library;
+package com.charbgr.BlurNavigationDrawer;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

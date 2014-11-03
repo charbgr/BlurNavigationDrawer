@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.charbgr.BlurNavigationDrawer.library;
+package com.charbgr.BlurNavigationDrawer.v7;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,13 +23,16 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.charbgr.BlurNavigationDrawer.Blur;
 
 public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
 
@@ -80,10 +83,15 @@ public class BlurActionBarDrawerToggle extends ActionBarDrawerToggle {
      */
     private boolean isOpening = false;
 
-    public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
-                                     int drawerImageRes, int openDrawerContentDescRes,
-                                     int closeDrawerContentDescRes) {
-        super(activity, drawerLayout, drawerImageRes, openDrawerContentDescRes, closeDrawerContentDescRes);
+    public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout, int openDrawerContentDescRes, int closeDrawerContentDescRes) {
+        super(activity, drawerLayout, openDrawerContentDescRes, closeDrawerContentDescRes);
+        this.context = activity.getBaseContext();
+        this.mDrawerLayout = drawerLayout;
+        init();
+    }
+
+    public BlurActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar, int openDrawerContentDescRes, int closeDrawerContentDescRes) {
+        super(activity, drawerLayout, toolbar, openDrawerContentDescRes, closeDrawerContentDescRes);
         this.context = activity.getBaseContext();
         this.mDrawerLayout = drawerLayout;
         init();

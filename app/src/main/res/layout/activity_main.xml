@@ -1,16 +1,15 @@
 <!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
-<com.charbgr.BlurNavigationDrawer.library.BlurDrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.charbgr.BlurNavigationDrawer.v4.BlurDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:blurRadius="19"
-    app:downScaleFactor="8.0"
-    app:drawerUpImageId="@drawable/ic_drawer"
-    app:openDescription="@string/navigation_drawer_open"
-    app:closeDescription="@string/navigation_drawer_close"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:blurRadius="19"
+    app:closeDescription="@string/navigation_drawer_close"
+    app:downScaleFactor="8.0"
+    app:drawerUpImageId="@drawable/ic_drawer"
+    app:openDescription="@string/navigation_drawer_open"
     tools:context=".MainActivity">
 
     <!-- As the main content view, the view below consumes the entire
@@ -19,8 +18,6 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-
 
 
     <!-- android:layout_gravity="start" tells DrawerLayout ttreat
@@ -38,4 +35,4 @@
         android:layout_gravity="start"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-</com.charbgr.BlurNavigationDrawer.library.BlurDrawerLayout>
+</com.charbgr.BlurNavigationDrawer.v4.BlurDrawerLayout>

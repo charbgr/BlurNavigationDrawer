@@ -160,7 +160,7 @@ public class MainActivity extends ActionBarActivity
             movies.add(new Movie(res.getDrawable(R.drawable.poster_prisoners), "Prisoners"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_runner_runner), "Runner Runner"));
             movies.add(new Movie(res.getDrawable(R.drawable.poster_the_counselor), "The counselor"));
-            movies.add(new Movie(res.getDrawable(R.drawable.poster_thor), "About Time"));
+            movies.add(new Movie(res.getDrawable(R.drawable.poster_thor), "Thor"));
 
 
 

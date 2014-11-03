@@ -1,11 +1,12 @@
-package com.charbgr.BlurNavigationDrawer.library;
+package com.charbgr.BlurNavigationDrawer.v4;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
+
+import com.charbgr.BlurNavigationDrawer.R;
 
 /**
  * Created by charbgr on 9/4/14.
@@ -20,6 +21,8 @@ public class BlurDrawerLayout extends DrawerLayout {
 
     public BlurDrawerLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        System.out.println("hihii v2");
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.BlurDrawerLayout, 0, 0);
         try {
@@ -56,6 +59,8 @@ public class BlurDrawerLayout extends DrawerLayout {
         } finally {
             ta.recycle();
         }
+
+
     }
 
     public BlurDrawerLayout(Context context, AttributeSet attrs, int defStyle) {

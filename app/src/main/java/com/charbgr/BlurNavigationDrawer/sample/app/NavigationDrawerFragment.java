@@ -1,12 +1,10 @@
 package com.charbgr.BlurNavigationDrawer.sample.app;
 
-import android.app.AlertDialog;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
@@ -22,10 +20,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.charbgr.BlurNavigationDrawer.library.BlurActionBarDrawerToggle;
-import com.charbgr.BlurNavigationDrawer.library.BlurDrawerLayout;
+import com.charbgr.BlurNavigationDrawer.v4.BlurActionBarDrawerToggle;
+import com.charbgr.BlurNavigationDrawer.v4.BlurDrawerLayout;
 
 
 /**
@@ -95,8 +92,10 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
+
+        View v = inflater.inflate(
                 R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView = (ListView) v.findViewById(R.id.mylistview);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -113,7 +112,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section3),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+        return v;
     }
 
     public boolean isDrawerOpen() {
