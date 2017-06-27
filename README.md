@@ -1,4 +1,4 @@
-Blur Navigation Drawer Library
+Blur Navigation Drawer Library[DEPRECATED]
 =========================
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BlurNavigationDrawer-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/874)
 
